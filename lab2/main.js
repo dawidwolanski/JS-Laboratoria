@@ -27,22 +27,22 @@ function togglePause() {
 
 prevButton.addEventListener('click', () => {
     showPrevSlide();
-    togglePause(); // Pauza po zmianie slajdu
+    togglePause(); 
 });
 
 nextButton.addEventListener('click', () => {
     showNextSlide();
-    togglePause(); // Pauza po zmianie slajdu
+    togglePause(); 
 });
 
 pauseButton.addEventListener('click', togglePause);
 
-// Automatyczne przewijanie slajdów co 4 sekundy
+
 setInterval(() => {
     if (!isPaused) {
         showNextSlide();
     }
 }, 4000);
 
-// Wywołanie funkcji showSlide dla pierwszego slajdu na starcie
+
 showSlide(currentSlide);
