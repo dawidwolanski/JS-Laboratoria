@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Moje notatki</h1>
+        <div class="note-form">
+            <input type="text" id="titleInput" placeholder="Tytuł">
+            <textarea id="contentInput" placeholder="Treść notatki"></textarea>
+            <input type="color" id="colorInput" value="#ffffff">
+            <label><input type="checkbox" id="pinInput">Przypnij</label>
+            <input type="text" id="tagsInput" placeholder="Tagi (oddzielone przecinkami)">
+            <button onclick="addNote()">Dodaj notatkę</button>
+            <input type="text" id="searchInput" placeholder="Szukaj...">
+            <button onclick="searchNotes()">Szukaj</button>
+            <div class="notes-list" id="notesList"></div>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
