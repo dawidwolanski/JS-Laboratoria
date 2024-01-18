@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchroniczne Dodawanie</title>
+</head>
+<body>
+    <div id="result"></div>
+    <div id="asyncOperations"></div>
+    <div id="executionTime"></div>
+
+    <script>
+    
+        function asyncAdd(a, b) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve(a + b);
+                }, 100);
+            });
+        }
+
+        
+        async function addNumbersAsync(...numbers) {
+            const promises = numbers.map(num => asyncAdd(0, num));
+            const results = await Promise.all(promises);
+            return results.reduce((acc, curr) => acc + curr, 0);
+        }
+
+       
+        function measureExecutionTime(callback) {
+            const start = performance.now();
+            callback();
+            const end = performance.now();
+            const executionTime = end - start;
+
+            return executionTime;
+        }
+
+        
+        const numbersToAdd = Array.from({ length: 100 }, (_, index) => index + 1);
+
+        const executionTime = measureExecutionTime(async () => {
+            const result = await addNumbersAsync(...numbersToAdd);
+            document.getElementById('result').innerText = `Wynik: ${result}`;
+            document.getElementById('asyncOperations').innerText = `Ilość operacji asynchronicznych: ${numbersToAdd.length}`;
+        });
+
+        document.getElementById('executionTime').innerText = `Czas wykonania: ${executionTime} ms`;
+    </script>
+</body>
+</html>
