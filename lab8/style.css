@@ -1,0 +1,14 @@
+.place {
+    position: relative;
+    width: 256px;
+    border: 1px solid black;
+    margin: 16px;
+    padding: 8px;
+}
+
+.remove {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
