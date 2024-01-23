@@ -1,36 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Mixer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Drum Kit</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="channels">
-        <div class="channel" data-channel="channel1">
-            <h3>Channel 1</h3>
-            <button class="play-channel">Play</button>
-            <button class="clear-channel">Clear</button>
-        </div>
-        <div class="channel" data-channel="channel2">
-            <h3>Channel 2</h3>
-            <button class="play-channel">Play</button>
-            <button class="clear-channel">Clear</button>
-        </div>
-        <!-- Dodaj więcej divów dla innych kanałów -->
-    </div>
 
-    <div class="metronome">
-        <h3>Metronome</h3>
-        <button id="metronome">Toggle Metronome</button>
-        <label for="bpm">BPM:</label>
-        <input type="number" id="bpm" name="bpm" min="1" max="300" value="120">
-    </div>
+<script src="script.js"></script>
 
-    <audio src="https://youtu.be/I0DMp1VDQhg" controls id="s1"></audio>
-    <audio src="./sounds/hihat.wav" controls id="s2"></audio>
-    <!-- Dodaj więcej elementów audio dla innych dźwięków -->
+<!-- Przyciski do sterowania -->
+<button id="startRecordingBtn">Start Recording</button>
+<button id="stopRecordingBtn">Stop Recording</button>
+<button id="playAllTracksBtn">Play All Tracks</button>
 
-    <script src="drumkit.js"></script>
 </body>
 </html>
