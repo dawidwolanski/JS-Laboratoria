@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // ... (kod z poprzednich odpowiedzi)
-
-    // Obsługa interfejsu dla kanałów
+  
     const channelButtons = document.querySelectorAll('.channel');
 
     channelButtons.forEach((channel) => {
