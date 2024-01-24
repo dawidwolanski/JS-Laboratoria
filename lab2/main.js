@@ -6,7 +6,7 @@ const pagination = document.querySelector('.pagination');
 let currentSlide = 0;
 let isPlaying = true;
 let interval;
-
+//automat
 function showSlide(slideIndex) {
     slides.forEach((slide, index) => {
         if (index === slideIndex) {
@@ -16,7 +16,7 @@ function showSlide(slideIndex) {
         }
     });
 }
-
+//do poprawy
 
 function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
@@ -53,7 +53,7 @@ function updatePagination() {
 function startSlider() {
     interval = setInterval(() => {
         nextSlide();
-    }, 3000);
+    }, 2000);
 }
 
 

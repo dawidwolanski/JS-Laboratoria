@@ -1,5 +1,5 @@
 let notes = JSON.parse(localStorage.getItem('notes')) || [];
-
+// local storage
 
 function displayNotes() {
     const notesList = document.getElementById('notesList');
@@ -9,9 +9,9 @@ function displayNotes() {
         const noteElement = document.createElement('div');
         noteElement.classList.add('note');
         noteElement.style.backgroundColor = note.color;
-
+//kolor
         const pinned = note.pin ? 'Pinned' : '';
-
+//pin
         noteElement.innerHTML = `
             <h2>${note.title} - ${pinned}</h2>
             <p>${note.content}</p>
@@ -19,12 +19,12 @@ function displayNotes() {
             <p>Created: ${new Date(note.createdAt).toLocaleString()}</p>
             <button onclick="deleteNote(${index})">Usuń</button>
         `;
-
+//dodaj
         notesList.appendChild(noteElement);
     });
 }
 
-
+//wypełnianie danymi
 function addNote() {
     const title = document.getElementById('titleInput').value;
     const content = document.getElementById('contentInput').value;
@@ -54,10 +54,11 @@ function deleteNote(index) {
     localStorage.setItem('notes', JSON.stringify(notes));
     displayNotes();
 }
-
+//poprawione usuwanie 
 
 function searchNotes() {
     const searchValue = document.getElementById('searchInput').value.toLowerCase();
+//pobieranie wartosci
 
     const filteredNotes = notes.filter(note =>
         note.title.toLowerCase().includes(searchValue) ||

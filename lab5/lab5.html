@@ -11,7 +11,7 @@
     <div id="executionTime"></div>
 
     <script>
-    
+    // symulacja asunchroniczna
         function asyncAdd(a, b) {
             return new Promise(resolve => {
                 setTimeout(() => {
@@ -27,7 +27,7 @@
             return results.reduce((acc, curr) => acc + curr, 0);
         }
 
-       
+       //czas
         function measureExecutionTime(callback) {
             const start = performance.now();
             callback();
@@ -37,7 +37,7 @@
             return executionTime;
         }
 
-        
+        //tablica 1-100
         const numbersToAdd = Array.from({ length: 100 }, (_, index) => index + 1);
 
         const executionTime = measureExecutionTime(async () => {

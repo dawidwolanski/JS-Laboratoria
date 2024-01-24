@@ -7,7 +7,7 @@ const displayElements = () => {
         displayListItem(element)
     })
 }
-
+//display
 const displayListItem = weatherData => {
     const el = document.createElement('div');
     el.setAttribute('class', 'place');
@@ -31,7 +31,7 @@ const setCityData = cityData => {
     data.push(cityData);
     localStorage.setItem('weather-data', JSON.stringify(data));
 }
-
+//pobieranie api
 const getCityData = async cityName => {
     try {
         const d = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apikey}`)

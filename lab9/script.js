@@ -3,13 +3,13 @@ const ctx = canvas.getContext('2d');
 const startBtn = document.getElementById('startBtn');
 const resetBtn = document.getElementById('resetBtn');
 
-let balls = [];
+let balls = [];// zmienne
 const numBalls = 50;
 const minDistance = 50;
 const ballRadius = 5;
 let animationId;
 
-function init() {
+function init() {//szybkość kul i pozycja
   balls = [];
   for (let i = 0; i < numBalls; i++) {
     const ball = {
@@ -21,7 +21,7 @@ function init() {
     balls.push(ball);
   }
 }
-
+// linie i kile
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -52,7 +52,7 @@ function draw() {
     if (balls[i].y + ballRadius > canvas.height || balls[i].y - ballRadius < 0) {
       balls[i].dy *= -1;
     }
-  }
+  }//do poprawy
 
   animationId = requestAnimationFrame(draw);
 }
@@ -70,11 +70,11 @@ resetBtn.addEventListener('click', () => {
 
 let mouseForce = 50; // na zero zeby zobaczyc jak sie mnożą// 
 const splitForce = 2; 
-
+//połozenie myszki
 canvas.addEventListener('mousemove', (event) => {
   const mouseX = event.clientX - canvas.getBoundingClientRect().left;
   const mouseY = event.clientY - canvas.getBoundingClientRect().top;
-
+//iteracja
   for (let i = 0; i < balls.length; i++) {
     const dx = mouseX - balls[i].x;
     const dy = mouseY - balls[i].y;
@@ -87,7 +87,7 @@ canvas.addEventListener('mousemove', (event) => {
     }
   }
 });
-
+//iteracja i obszar
 canvas.addEventListener('click', (event) => {
   const mouseX = event.clientX - canvas.getBoundingClientRect().left;
   const mouseY = event.clientY - canvas.getBoundingClientRect().top;
@@ -96,7 +96,7 @@ canvas.addEventListener('click', (event) => {
     const dx = mouseX - balls[i].x;
     const dy = mouseY - balls[i].y;
     const distance = Math.sqrt(dx * dx + dy * dy);
-
+//dodawanie po klik
     if (distance < ballRadius) {
       balls.splice(i, 1); 
 

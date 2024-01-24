@@ -5,20 +5,20 @@ const soundFiles = {
     'F': 'http://127.0.0.1:5500/lab3/perc-tambo.wav'
   };
 
-  // Inicjalizacja zmiennych
+  
   let recording = false;
   let track1 = [];
   let track2 = [];
   let track3 = [];
   let track4 = [];
 
-  // Funkcja obsługująca odtwarzanie dźwięku
+  
   function playSound(soundFile) {
     const audio = new Audio(soundFile);
     audio.play();
   }
 
-  // Funkcja obsługująca nagrywanie ścieżki dźwiękowej
+  
   function recordSound(key, time) {
     if (recording) {
       switch (key) {
@@ -52,17 +52,16 @@ const soundFiles = {
     recordSound(key, Date.now());
   }
 
-  // Funkcja obsługująca zdarzenie rozpoczęcia nagrywania
+  
   function startRecording() {
     recording = true;
   }
 
-  // Funkcja obsługująca zdarzenie zakończenia nagrywania
   function stopRecording() {
     recording = false;
   }
 
-  // Funkcja obsługująca zdarzenie odtwarzania wszystkich ścieżek
+  
   function playAllTracks() {
     playTrack(track1);
     playTrack(track2);
@@ -70,7 +69,7 @@ const soundFiles = {
     playTrack(track4);
   }
 
-  // Dodanie nasłuchiwaczy zdarzeń
+  // do poprawy ścieżki nagrywania
   document.addEventListener('keydown', handleKeyPress);
   document.getElementById('startRecordingBtn').addEventListener('click', startRecording);
   document.getElementById('stopRecordingBtn').addEventListener('click', stopRecording);
